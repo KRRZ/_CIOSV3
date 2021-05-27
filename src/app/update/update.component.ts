@@ -7,22 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateComponent implements OnInit {
 
-  fasz = localStorage.getItem('nameday');
+  today = ""
+  tomorrow = ""
 
-  private pina: any = [];
+  private data: any = [];
 
   constructor() { }
   
 
   ngOnInit(): void {
-    this.pina = localStorage.getItem('nameday');
-    this.pina = JSON.parse(this.pina);
-   // console.log(JSON.parse(this.pina[0]));
-    console.log(this.pina[0].data.dates.day);
+    this.data = localStorage.getItem('nameday');
+    this.data = JSON.parse(this.data);
+    console.log(this.data[0].data.dates.day);
+    this.today = this.data[0].data.dates.day + " " + this.data[0].data.dates.month + " " + this.data[0].data.namedays.hu
+    this.tomorrow = this.data[1].data.dates.day + " " + this.data[1].data.dates.month + " " + this.data[1].data.namedays.hu
+
   }
 
   getDat() {
-    this.fasz = localStorage.getItem('nameday');
+    
     
   }
 }
