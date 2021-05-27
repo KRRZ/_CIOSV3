@@ -5,6 +5,6 @@
     "\\src\\app",
     "\\src\\app\\login"
   ],
-  "SelectedNode": "\\src\\app\\login\\login.component.html",
+  "SelectedNode": "\\src\\app\\login\\login.component.spec.ts",
   "PreviewInSolutionExplorer": false
 }
