@@ -14,17 +14,35 @@ export class ListComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
   }
 
   getData() {
-    const url = 'https://api.abalin.net/today?country=hu'
+    const url = 'https://api.abalin.net/tomorrow?country=hu'
     this.http.get(url).subscribe((res) => {
-      this.data = res
-      console.log(this.data)
-      this.nd = this.data.data.dates.day + " " + this.data.data.dates.month + " " + this.data.data.namedays.hu
+      this.data.push(res)
+
+      const url1 = 'https://api.abalin.net/today?country=hu'
+      this.http.get(url1).subscribe((res1) => {
+        this.data.push(res1)
+
+        const url2 = 'https://api.abalin.net/yesterday?country=hu'
+        this.http.get(url2).subscribe((res2) => {
+          this.data.push(res2)
+
+
+
+          //console.log(this.data[0])
+
+          this.nd = this.data[0].data.dates.day + " " + this.data[0].data.dates.month + " " + this.data[0].data.namedays.hu
+
+          localStorage.setItem('nameday', JSON.stringify(this.data))
+
+
+        })
+      }
+
+      );
     })
   }
-
 }
-
