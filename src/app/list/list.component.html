@@ -1,9 +1,9 @@
-<p>list works!</p>
-
-<div style="text-align:center">
+<div style="text-align:center" *ngFor="let a of data">
   <h1>
-    {{nd}}
+    {{a.data.dates.month}}. {{a.data.dates.day}}.
   </h1>
-  <button (click)="getData()">Fetch Data</button>
-  
+  <h1>
+    {{a.data.namedays.hu}}
+  </h1>
+  <hr>
 </div>

@@ -1,10 +1,22 @@
-<p>update works!</p>
-
 <div style="text-align:center">
-  <h1>
-    {{today}}
-  </h1>
-  <h1>
-    {{tomorrow}}
-  </h1>
-</div>
+
+  <div class="container-sm">
+
+    <div class="form-group row" *ngFor = "let a of data">
+      <label class="col-sm-2 col-form-label">Tegnap</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" placeholder="{{a.data.dates.month}}" [(ngModel)]="a.data.dates.month">
+        <input type="text" class="form-control" placeholder="{{a.data.dates.day}}" [(ngModel)]="a.data.dates.day">
+        <input type="text" class="form-control" placeholder="{{a.data.namedays.hu}}" [(ngModel)]="a.data.namedays.hu">
+        <br>
+      </div>
+    </div>
+        <br>
+        <div class="form-group row">
+          <div class="col-sm-10 ">
+            <button (click)="checklogin()" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
