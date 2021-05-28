@@ -24,7 +24,7 @@ export class CreateComponent implements OnInit {
     console.log(this.c)   
   }
 
-  checklogin(): void {
+  create(): void {
     this.http.get(this.url).subscribe((res) => {
       this.data.push(res)})
 

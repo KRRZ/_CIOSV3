@@ -17,7 +17,7 @@ export class UpdateComponent implements OnInit {
     this.data = JSON.parse(this.data);
   }
 
-  checklogin(): void {
+  update(): void {
     localStorage.setItem('nameday', JSON.stringify(this.data))
   }
 }
