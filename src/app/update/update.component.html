@@ -1,22 +1,29 @@
 <div style="text-align:center">
-
-  <div class="container-sm">
-
-    <div class="form-group row" *ngFor = "let a of data">
-      <label class="col-sm-2 col-form-label">Tegnap</label>
-      <div class="col-sm-2">
-        <input type="text" class="form-control" placeholder="{{a.data.dates.month}}" [(ngModel)]="a.data.dates.month">
-        <input type="text" class="form-control" placeholder="{{a.data.dates.day}}" [(ngModel)]="a.data.dates.day">
-        <input type="text" class="form-control" placeholder="{{a.data.namedays.hu}}" [(ngModel)]="a.data.namedays.hu">
-        <br>
+  <div class="table-responsive-sm">
+    <table class="table table-striped w-auto">
+      <thead>
+        <tr>
+          <th scope="col">Month</th>
+          <th scope="col">Day</th>
+          <th scope="col">Nameday(s)</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let a of data">
+        <tr>
+          <td><input type="text" class="form-control" placeholder="{{a.data.dates.month}}" [(ngModel)]="a.data.dates.month"></td>
+          <td><input type="text" class="form-control" placeholder="{{a.data.dates.day}}" [(ngModel)]="a.data.dates.day"></td>
+          <td><input type="text" class="form-control" placeholder="{{a.data.namedays.hu}}" [(ngModel)]="a.data.namedays.hu"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="form-group row">
+      <div class="col-sm-10 ">
+        <button (click)="update()" class="btn btn-primary">Update</button>
       </div>
     </div>
-        <br>
-        <div class="form-group row">
-          <div class="col-sm-10 ">
-            <button (click)="update()" class="btn btn-primary">Update</button>
-          </div>
-        </div>
-      </div>
+  </div>
 
-    </div>
+
+</div>
+
+

@@ -8,19 +8,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username = "";
-  password = "";
+  uname = ""
+  pword = ""
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    localStorage.setItem("login", "false")
   }
 
-  checklogin(): void {
-    if (this.username == "admin" && this.password == "admin") {
-      localStorage.setItem("dummylogin", "true");
-      this.router.navigate(['/delete']);
+  login(): void {
+    if (this.uname == "admin" && this.pword == "admin") {
+      localStorage.setItem("login", "true");
+      this.router.navigate(['/list']);
     }
-    else localStorage.setItem("dummylogin", "false");
   }
 }

@@ -1,7 +1,20 @@
-<div style="text-align:center" *ngFor="let a of data">
-  <h1>
-    {{a.data.dates.month}}. {{a.data.dates.day}}. - {{a.data.namedays.hu}}
-  </h1>
-  <button (click)="delete(a)" class="btn btn-primary">Delete</button>
-  <hr>
+<div class="table-responsive-sm">
+  <table class="table table-striped w-auto">
+    <thead>
+      <tr>
+        <th scope="col">Month</th>
+        <th scope="col">Day</th>
+        <th scope="col">Nameday(s)</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let a of data">
+      <tr>
+        <td>{{a.data.dates.month}}.</td>
+        <td>{{a.data.dates.day}}.</td>
+        <td>{{a.data.namedays.hu}}</td>
+        <td><button (click)="delete(a)" class="btn btn-primary">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
