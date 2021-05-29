@@ -1,19 +1,22 @@
-<div class="container-sm">
-
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">Tegnap</label>
-    <div class="col-sm-2">
-      <input type="text" class="form-control" placeholder="Hónap" [(ngModel)]="data[c].data.dates.month">
-      <input type="text" class="form-control" placeholder="Nap" [(ngModel)]="data[c].data.dates.day">
-      <input type="text" class="form-control" placeholder="Nevek (','-vel elválasztva)" [(ngModel)]="data[c].data.namedays.hu">
-      <br>
+<div class="d-flex justify-content-center">
+  <div class="container-sm">
+    <div class="form-group row">
+      <h3>Create</h3>
+      <div class="col-sm-2">
+        <br>
+        <input type="text" class="form-control" placeholder="Month" [(ngModel)]="data[c].data.dates.month">
+        <br>
+        <input type="text" class="form-control" placeholder="Day" [(ngModel)]="data[c].data.dates.day">
+        <br>
+        <input type="text" class="form-control" placeholder="Name(s)" [(ngModel)]="data[c].data.namedays.hu">
+        <br>
+      </div>
     </div>
-  </div>
-  <br>
-  <div class="form-group row">
-    <div class="col-sm-10 ">
-      <button (click)="create()" class="btn btn-primary">Create</button>
+    <br>
+    <div class="form-group row">
+      <div class="col-sm-10 ">
+        <button (click)="create()" class="btn btn-primary">Create</button>
+      </div>
     </div>
   </div>
 </div>
-

@@ -1,18 +1,18 @@
-<div class="table-responsive-sm">
-  <table class="table table-striped w-auto">
-    <thead>
-      <tr>
-        <th scope="col">Month</th>
-        <th scope="col">Day</th>
-        <th scope="col">Nameday(s)</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let a of data">
-      <tr>
-        <td>{{a.data.dates.month}}.</td>
-        <td>{{a.data.dates.day}}.</td>
-        <td>{{a.data.namedays.hu}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="d-flex justify-content-center">
+    <table class="table table-striped w-50">
+      <thead>
+        <tr>
+          <th class="col-sm-5">Month</th>
+          <th class="col-sm-5">Day</th>
+          <th class="col-sm-5">Nameday(s)</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let a of data">
+        <tr>
+          <td>{{a.data.dates.month}}.</td>
+          <td>{{a.data.dates.day}}.</td>
+          <td>{{a.data.namedays.hu}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
